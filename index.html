@@ -309,7 +309,7 @@ Let’s get right into it! Read on for more details, including our two upcoming 
         <div class="container">
           <div class="row">
           				<div class="col-md-12">
-              <form class="contact_bg">
+              <form id="submit-form" action="">
             <div class="row">
             <div class="col-md-12">
                 <div class="titlepage">
@@ -391,7 +391,25 @@ Let’s get right into it! Read on for more details, including our two upcoming 
           <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
           <script src="js/custom.js"></script>
           <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-
+<script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbxZX53AyaD5mahFwAIrWfsxm6u-4Cx3C4rnVEElHmWvEsQtGZw/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
 
 
 
