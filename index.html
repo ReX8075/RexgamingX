@@ -309,7 +309,7 @@ Let’s get right into it! Read on for more details, including our two upcoming 
         <div class="container">
           <div class="row">
           				<div class="col-md-12">
-              <form id="submit-form" action="">
+              <form class="contact_bg" action="">
             <div class="row">
             <div class="col-md-12">
                 <div class="titlepage">
@@ -392,11 +392,11 @@ Let’s get right into it! Read on for more details, including our two upcoming 
           <script src="js/custom.js"></script>
           <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 <script>
-        $("#submit-form").submit((e)=>{
+        $(".contact_bg").submit((e)=>{
             e.preventDefault()
             $.ajax({
                 url:"https://script.google.com/macros/s/AKfycbxZX53AyaD5mahFwAIrWfsxm6u-4Cx3C4rnVEElHmWvEsQtGZw/exec",
-                data:$("#submit-form").serialize(),
+                data:$(".contact_bg").serialize(),
                 method:"post",
                 success:function (response){
                     alert("Form submitted successfully")
